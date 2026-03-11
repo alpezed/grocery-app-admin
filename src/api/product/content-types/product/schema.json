@@ -50,6 +50,9 @@
       "relation": "oneToMany",
       "target": "api::favorite.favorite",
       "mappedBy": "product"
+    },
+    "freeShipping": {
+      "type": "boolean"
     }
   }
 }
