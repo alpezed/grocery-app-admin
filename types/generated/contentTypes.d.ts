@@ -532,6 +532,45 @@ export interface ApiFavoriteFavorite extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
+  collectionName: 'orders';
+  info: {
+    displayName: 'Orders';
+    pluralName: 'orders';
+    singularName: 'order';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    clerkId: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    items: Schema.Attribute.Component<'product.order-item', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
+      Schema.Attribute.Private;
+    orderStatus: Schema.Attribute.Enumeration<
+      [
+        'placed',
+        'pending',
+        'confirmed',
+        'shipped',
+        'out_for_delivery',
+        'delivered',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'placed'>;
+    publishedAt: Schema.Attribute.DateTime;
+    stripePaymentIntentId: Schema.Attribute.String;
+    timeline: Schema.Attribute.Component<'product.timeline', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -1147,6 +1186,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::address.address': ApiAddressAddress;
       'api::favorite.favorite': ApiFavoriteFavorite;
+      'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
       'api::review.review': ApiReviewReview;
       'api::transaction.transaction': ApiTransactionTransaction;

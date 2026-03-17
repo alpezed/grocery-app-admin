@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_product_timelines",
+  "info": {
+    "displayName": "Timeline"
+  },
+  "options": {},
+  "attributes": {
+    "orderPlaced": {
+      "type": "datetime"
+    },
+    "orderConfirmed": {
+      "type": "datetime"
+    },
+    "orderShipped": {
+      "type": "datetime"
+    },
+    "outForDelivery": {
+      "type": "datetime"
+    },
+    "orderDelivered": {
+      "type": "datetime"
+    }
+  },
+  "config": {}
+}

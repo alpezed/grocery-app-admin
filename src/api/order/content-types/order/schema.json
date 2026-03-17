@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Orders"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderStatus": {
+      "type": "enumeration",
+      "default": "placed",
+      "enum": [
+        "placed",
+        "pending",
+        "confirmed",
+        "shipped",
+        "out_for_delivery",
+        "delivered"
+      ]
+    },
+    "stripePaymentIntentId": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "product.order-item",
+      "repeatable": true
+    },
+    "timeline": {
+      "type": "component",
+      "component": "product.timeline",
+      "repeatable": false
+    },
+    "clerkId": {
+      "type": "string"
+    }
+  }
+}
