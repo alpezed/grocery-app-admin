@@ -557,7 +557,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
         'pending',
         'confirmed',
         'shipped',
-        'out_for_delivery',
+        'outForDelivery',
         'delivered',
       ]
     > &

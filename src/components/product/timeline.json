@@ -5,19 +5,19 @@
   },
   "options": {},
   "attributes": {
-    "orderPlaced": {
+    "placed": {
       "type": "datetime"
     },
-    "orderConfirmed": {
+    "confirmed": {
       "type": "datetime"
     },
-    "orderShipped": {
+    "shipped": {
       "type": "datetime"
     },
     "outForDelivery": {
       "type": "datetime"
     },
-    "orderDelivered": {
+    "delivered": {
       "type": "datetime"
     }
   },

@@ -19,11 +19,11 @@ export interface ProductTimeline extends Struct.ComponentSchema {
     displayName: 'Timeline';
   };
   attributes: {
-    orderConfirmed: Schema.Attribute.DateTime;
-    orderDelivered: Schema.Attribute.DateTime;
-    orderPlaced: Schema.Attribute.DateTime;
-    orderShipped: Schema.Attribute.DateTime;
+    confirmed: Schema.Attribute.DateTime;
+    delivered: Schema.Attribute.DateTime;
     outForDelivery: Schema.Attribute.DateTime;
+    placed: Schema.Attribute.DateTime;
+    shipped: Schema.Attribute.DateTime;
   };
 }
 

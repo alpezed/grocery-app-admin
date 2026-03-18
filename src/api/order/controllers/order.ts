@@ -44,7 +44,7 @@ export default factories.createCoreController(
 							orderStatus: 'confirmed',
 							timeline: {
 								...order.timeline,
-								orderConfirmed: new Date().toISOString(),
+								confirmed: new Date().toISOString(),
 							},
 						},
 					});
