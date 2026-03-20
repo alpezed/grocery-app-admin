@@ -486,6 +486,7 @@ export interface ApiAddressAddress extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email: Schema.Attribute.Email;
+    isDefault: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -559,6 +560,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
         'shipped',
         'outForDelivery',
         'delivered',
+        'cancelled',
       ]
     > &
       Schema.Attribute.DefaultTo<'placed'>;

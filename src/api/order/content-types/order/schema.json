@@ -20,7 +20,8 @@
         "confirmed",
         "shipped",
         "outForDelivery",
-        "delivered"
+        "delivered",
+        "cancelled"
       ]
     },
     "stripePaymentIntentId": {
